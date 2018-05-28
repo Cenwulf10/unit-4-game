@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Crystal Collector</title>
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+  </script>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+    <div class="jumbotron">
+        <h1>Crystal Collector!</h1>
+        <div id="instructions">
+
+        </div>
+        <div id="numbertoget">
+
+        </div>
+        <div id="winloss">
+            <div id="numberwins"><p>Wins:</p></div>
+            <div id="numberlosses"><p>Losses:</p></div>
+        </div>   
+        <div class="crystals">       
+            <img class="image" id="crystal1" src="assets/images/crystal1.jpg">
+            <img class="image" id="crystal2" src="assets/images/crystal2.jpg">
+            <img class="image" id="crystal3" src="assets/images/crystal3.jpg">
+            <img class="image" id="crystal4" src="assets/images/crystal4.jpg">
+        </div>
+        <div id="totalscore"><p>Your total score is:</p></div>
+        <div id="score">
+
+        </div>
+    </div>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            var random = Math.floor(Math.random()*101+19);
+            
+            $("#numbertoget").text(random);
+            
+            var num1 = Math.floor(Math.random()*12+1);
+            var num2 = Math.floor(Math.random()*12+1);
+            var num3 = Math.floor(Math.random()*12+1);
+            var num4 = Math.floor(Math.random()*12+1);
+            
+            var userTotal= 0;
+            var wins = 0;
+            var losses = 0;
+            
+            //$("#numberwins").text(wins);
+            //$("#numberlosses").text(losses);
+            
+            function reset() {
+                random = Math.floor(Math.random()*102+19);
+                console.log(random);
+                $("#numbertoget").text(random);
+                var num1 = Math.floor(Math.random()*12+1);
+                var num2 = Math.floor(Math.random()*12+1);
+                var num3 = Math.floor(Math.random()*12+1);
+                var num4 = Math.floor(Math.random()*12+1);
+                userTotal = 0;
+                $("#score").text(userTotal);
+            }
+            
+            function winner() {
+                wins++;
+                $("#numberwins").text(wins);
+                reset();
+            }
+            
+            function loser() {
+                losses++;
+                $("#numberlosses").text(losses);
+                reset();
+            }
+            
+            $("#crystal1").on("click", function() {
+                userTotal = userTotal + num1;
+                console.log("New userTotal " + userTotal);
+                $("#score").text(userTotal);
+            
+                if (userTotal === random) {
+                    winner()
+                }
+            
+                else if (userTotal > random) {
+                    loser()
+                } 
+            })
+            $("#crystal2").on("click", function() {
+                userTotal = userTotal + num2;
+                console.log("New userTotal " + userTotal);
+                $("#score").text(userTotal);
+            
+                if (userTotal === random) {
+                    winner()
+                }
+            
+                else if (userTotal > random) {
+                    loser()
+                } 
+            })
+            $("#crystal3").on("click", function() {
+                userTotal = userTotal + num3;
+                console.log("New userTotal " + userTotal);
+                $("#score").text(userTotal);
+            
+                if (userTotal === random) {
+                    winner()
+                }
+            
+                else if (userTotal > random) {
+                    loser()
+                } 
+            })
+            $("#crystal4").on("click", function() {
+                userTotal = userTotal + num4;
+                console.log("New userTotal " + userTotal);
+                $("#score").text(userTotal);
+            
+                if (userTotal === random) {
+                    winner()
+                }
+            
+                else if (userTotal > random) {
+                    loser()
+                } 
+            })
+           
+
+        });
+            </script>
+    </body>
+</html>

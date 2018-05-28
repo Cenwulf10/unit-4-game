@@ -1,0 +1,26 @@
+#winloss{
+    background: lightblue;
+    margin-right: 95%;
+}
+.crystals{
+    background: white;
+    margin-right: 78%;
+}
+h1{
+    background: wheat;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 80%;
+}
+#numbertoget{
+    background: lightgreen;
+    margin-right: 95%;
+}
+#totalscore{
+    background: coral;
+    margin-right: 90%;
+
+}
+#score{
+    background: coral;
+    margin-right: 90%;
+}
